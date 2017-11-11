@@ -1,0 +1,21 @@
+1. Problem. 
+	I have an update method that makes the changes, 
+		implementation works for getting adjacentcells ONE-BY-ONE. Not entities though as there already is an arraylist (static/non-static?).
+		If I do this, one taketurn, one cell object, all entities are iterated.
+        I can't invoke update using existing cell object in world ([][]).
+		
+		SOLUTION DON'T ITERATE THRU ALL ENTITY ARRAYLIST. JUST ONE AT A TIME. TUTOR kinda SOUNDED THOUGH THAT YOU GONNA ITERATE WHOLE.
+		
+		Another possible solution, if I update only the first cell index object, then I can't iterate adjacentcells but invoke methods for entities. 
+			Problem here is that entity methods don't have access to cell location to retrieve , even as I give params (can't loop & increment here too).
+			it's harder to keep track of what's happening.
+			Can't retrieve location from entity class.
+	    
+		
+		First solution makes more sense, but can't wrap my head around this one.
+	
+
+LOGIC.
+REMOVE HERBIVORES.
+SEED. GROW.
+MOVE HERBIVORES. EAT OR DIE
