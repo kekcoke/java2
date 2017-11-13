@@ -49,8 +49,8 @@ public class Plant extends Entity {
      */
     public void init() {
     	super.init();
-    	/*cell.setBackground(Color.green);
-    	cell.add(new JLabel("P"));*/
+    	cell.setBackground(Color.green);
+    	cell.add(new JLabel("P"));
     }
 
     /**
@@ -86,7 +86,6 @@ public class Plant extends Entity {
                 cellsNil++;
             } else if (en.getEntityID().equals(EntityID.PLANT)) {
                 cellsPlants++;
-                continue;
             }   
         }
         return (cellsNil >= SEED_MIN 

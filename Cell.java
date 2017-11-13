@@ -38,8 +38,6 @@ public class Cell extends JPanel {
      */
     private static final int PLANT_NUM = 50;
 
-    private ArrayList<Cell> adjacentCells = new ArrayList<Cell>();
-    
     private final World world;
 
     private Point cellAt;
@@ -87,11 +85,11 @@ public class Cell extends JPanel {
      *         Adjacent cells (possibly 3, 5, or 8).
      */      
     public ArrayList<Cell> getAdjacentCells() { 
-        int cellX = cellAt.x;
-        int cellY = cellAt.y;
-        for (int row = (cellY - 1); row <= (cellY + 1); row++) {
-            for (int col = (cellX - 1); col <= (cellX + 1); col++) {      
-                if ((cellX == col) && (cellY == row)) {
+    	ArrayList<Cell> adjacentCells = new ArrayList<Cell>();
+        
+    	for (int row = (cellAt.y - 1); row <= (cellAt.y + 1); row++) {
+            for (int col = (cellAt.x - 1); col <= (cellAt.x + 1); col++) {      
+                if ((cellAt.x == col) && (cellAt.y == row)) {
                     continue;
                 }
                 if ((col >= 0 && col <= (world.getColumnCount() - 1)) 
@@ -121,7 +119,7 @@ public class Cell extends JPanel {
      *                Plant-occupied cell where 
      *                herbivore is moving into.
      */
-    public void eat(Cell moveInto, Cell moveFrom) {
+    public void eat(final Cell moveInto, final Cell moveFrom) {
     	System.out.println("I am a : " + this.getEntity().getEntityID() + " going to moveInto " + moveInto.getEntity().getEntityID());
         moveInto.setEntity(this.getEntity()).init();
                

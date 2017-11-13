@@ -78,9 +78,9 @@ class World {
      * Herbivores one Cell.
      */
     public void takeTurn() {
-      //this.removeHerbivores(); 
-      //this.seedPlants();     
-        this.moveHerbivores();  
+        removeHerbivores(); 
+        seedPlants();     
+        moveHerbivores();  
         
     System.out.print(turnCount++);
     }
@@ -114,11 +114,11 @@ class World {
             for (int col = 0; col < this.columns; col++) {
                 Entity en  = this.cells[row][col].getEntity();
                 if (en.getEntityID().equals(EntityID.PLANT)) {
-                    boolean sprout = true;
+/*                    boolean sprout = false;
                     if (sprout == ((Plant) en).seed()) {
                         cells[row][col].sprout(cells[row][col]);
                         seeded++;
-                    }
+                    }*/
                 }
             }
         }
@@ -136,10 +136,12 @@ class World {
                 Entity en  = this.cells[row][col].getEntity();
                 if (en.getEntityID().equals(EntityID.HERBIVORE) &&
                 		((Herbivore)en).getLifeSpan() > 0) {
-                        System.out.printf("\nRow %s. Col %s\n", row, col);
-                        System.out.printf("%s\n",this.cells[row][col].getEntity().getEntityID());
+                	 
+                	
+                	    System.out.printf("\nAt World:Row %s. Col %s\n", row, col);
+                        System.out.printf("At World old cell: %s\n",this.cells[row][col].getEntity().getEntityID());
                         ((Herbivore) en).move();
-                        System.out.printf("%s\n",this.cells[row][col].getEntity().getEntityID());
+                        System.out.printf("At World old cell: %s\n",this.cells[row][col].getEntity().getEntityID());
                         this.cells[row][col].getEntity().init();
                     }
                 

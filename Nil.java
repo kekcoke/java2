@@ -38,5 +38,6 @@ public class Nil extends Entity {
      */
     public void init() {
     	cell.add(new JLabel("n"));
+    	cell.setBackground(Color.GRAY);
     }
 }

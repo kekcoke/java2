@@ -86,5 +86,13 @@ abstract class Entity extends JPanel {
     	jeSuis = color;
     }
     
+    public void move() {
+    	
+    }
+    
+    public void givebirth() {
+    	
+    }
+    
 
 }

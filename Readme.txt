@@ -1,19 +1,17 @@
 Author: Kevin Oane
 Submission for a2a.
 
+Fixes:
+1. Fixed infinite loops occurence on moveHerbivores, caused when 
+herbivore is fully surrounded by empty cells.
+
 Fixing known bugs.
-1. Premature (incomplete) iteration to selected methods.
-       getHerbivores early termination caused by infinite looping inside,
-           which was caused getAdjacentCells returning 15 adjacent 
- 	       cells. On cell row 8 col 0.
-           getAdjacentCells retrieves correct number of cells prior 
-               to the currrent problem.
+1. Changes color but not entity. 'ON\OFF' happening. 
+	Old cells moves becoming empty. 
+	Herbivore where it goes is unknown.
+2. Some herbivores remain as is. 
 
-2. Cells not coloring on either swapEntities, eat methods.
-       Lessened usage of local variables. 
-       Cells should update colors that already have been iterated,
-          even with problem #1 existing.
-
-Priority is to fix adjacentCells at that particular instance,
-prior to solving 2 and implementing cell containing instance 
-variables of 
+Limitations:
+Restricting use of final modifiers.
+seedPlants disabled until moveHerbivores is fixed.
+removeHerbivores are working.
